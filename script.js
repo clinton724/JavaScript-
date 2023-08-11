@@ -1,34 +1,37 @@
-// Ways to declare a variable
-// var, let, const
+// Primitive Data Types
 
-let firstName = 'John';
-let lastName = 'Doe';
+//Strings
+let firstName = 'Sarah';
 
-console.log(firstName, lastName);
+//Number
+let age = 30;
 
-// Variable re-assignment
-let score = 1;
+//Boolean
+let hasKids = true;
 
-console.log(score);
+//null
+let aptNumber = null;
 
-if (true) {
-    score += 1;
+//Undefined
+let score;
+
+//Symbol
+let id = Symbol('id');
+
+//Bigint
+let n = 94725378483527574637373n;
+
+//Reference Types
+let arr = [1,2,3,4,5];
+
+let person = {
+    name: 'Brad'
+};
+
+function sayHello() {
+    console.log('Hello')
 }
 
-console.log(score);
+let output = sayHello;
 
-const x = 100;
-
-// const variables cannot be re-assigned
-// x = 200;
-
-// const variables must be initialised
-// const score1; cannot be done
-
-const arr = [1, 2, 3, 4];
-arr.push(5);
-console.log(arr);
-
-// Declare multiple variables at once
-
-let a, b, c;
+console.log(output, typeof output);
