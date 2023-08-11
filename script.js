@@ -1,44 +1,27 @@
-//1. Arithmetic operators
+// Type Coersion
 let x;
 
-x = 5 + 5;
-x = 5 - 5;
-x = 5 * 5;
-x = 5 / 5;
-x = 7 % 5;
+x = 5 + '5';
 
-// Concatenation
-x = 'Hello' + ' ' + 'World';
+x = 5 + Number('5');
 
-// Exponent
-x = 2 ** 3;
+x = 5 * '5';
 
-// Increment
-x = 1;
-// x = x + 1;
-x++;
+x = 5 + null;
 
-// Decrement
-// x = x - 1;
-x--;
+x = Number(null);
 
-//2. Assignment Operators
-x = 10;
+x = Number(true);
+x = Number(false);
 
-x += 5;
-x -= 5;
-x *= 5;
-x /= 5;
-x %= 5;
+x = 5 + true;
 
-//3. Comparison Operators
-x = 2 == '2';
+x = 5 + false;
 
-x = 2 === '2';
-
-x = 2 != '2';
-
-x = 2 !== '2';
-
+x = 5 + undefined;
 
 console.log(x);
+
+
+
+console.log(x, typeof x);
