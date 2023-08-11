@@ -1,37 +1,16 @@
-// Primitive Data Types
-
-//Strings
-let firstName = 'Sarah';
-
-//Number
+// These values are stored on the stack
+let name = 'John';
 let age = 30;
 
-//Boolean
-let hasKids = true;
-
-//null
-let aptNumber = null;
-
-//Undefined
-let score;
-
-//Symbol
-let id = Symbol('id');
-
-//Bigint
-let n = 94725378483527574637373n;
-
-//Reference Types
-let arr = [1,2,3,4,5];
-
+// Reference values are stored on the heap
 let person = {
-    name: 'Brad'
+    name: 'Brad',
+    age: 40
 };
 
-function sayHello() {
-    console.log('Hello')
-}
+let newName = name;
+newName = 'Jonathan';
 
-let output = sayHello;
-
-console.log(output, typeof output);
+let newPerson = person;
+newPerson.name = 'Bradly';
+console.log(person, newPerson);
