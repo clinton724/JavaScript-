@@ -1,16 +1,18 @@
-// These values are stored on the stack
-let name = 'John';
-let age = 30;
+/* Type conversion */
+let amount = 1;
 
-// Reference values are stored on the heap
-let person = {
-    name: 'Brad',
-    age: 40
-};
+/* Convert string to number */
+// amount = parseInt(amount);
+// amount = +amount;
+// amount = Number(amount);
 
-let newName = name;
-newName = 'Jonathan';
+/* Conver number to string */ 
+//amount = amount.toString();
+//amount = String(amount);
 
-let newPerson = person;
-newPerson.name = 'Bradly';
-console.log(person, newPerson);
+/* Convert string to decimal */
+//amount = parseFloat(amount);
+
+/* Convert number to boolean */
+amount = Boolean(amount);
+console.log(amount, typeof amount);
