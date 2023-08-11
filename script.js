@@ -1,18 +1,44 @@
-/* Type conversion */
-let amount = 1;
+//1. Arithmetic operators
+let x;
 
-/* Convert string to number */
-// amount = parseInt(amount);
-// amount = +amount;
-// amount = Number(amount);
+x = 5 + 5;
+x = 5 - 5;
+x = 5 * 5;
+x = 5 / 5;
+x = 7 % 5;
 
-/* Conver number to string */ 
-//amount = amount.toString();
-//amount = String(amount);
+// Concatenation
+x = 'Hello' + ' ' + 'World';
 
-/* Convert string to decimal */
-//amount = parseFloat(amount);
+// Exponent
+x = 2 ** 3;
 
-/* Convert number to boolean */
-amount = Boolean(amount);
-console.log(amount, typeof amount);
+// Increment
+x = 1;
+// x = x + 1;
+x++;
+
+// Decrement
+// x = x - 1;
+x--;
+
+//2. Assignment Operators
+x = 10;
+
+x += 5;
+x -= 5;
+x *= 5;
+x /= 5;
+x %= 5;
+
+//3. Comparison Operators
+x = 2 == '2';
+
+x = 2 === '2';
+
+x = 2 != '2';
+
+x = 2 !== '2';
+
+
+console.log(x);
