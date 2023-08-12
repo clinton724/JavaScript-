@@ -1,13 +1,13 @@
-let x;
+const post = {
+    id: 1,
+    title: 'Post one',
+    body: 'This is the body'
+};
 
-//const todo = {};
-//Another way to do this
+// Convert JSON to string
+const str = JSON.stringify(post);
 
-const todo = new Object();
+// Parse JSON
+const obj = JSON.parse(str);
 
-todo.id = 1;
-todo.name = 'Buy Milk';
-todo.completed = false;
-x = Object.keys(todo).length;
-
-console.log(x);
+console.log(obj);
