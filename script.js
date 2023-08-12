@@ -1,13 +1,41 @@
-const post = {
-    id: 1,
-    title: 'Post one',
-    body: 'This is the body'
-};
+/* Object Challenge */
 
-// Convert JSON to string
-const str = JSON.stringify(post);
+const library = [
+   {
+    title: "Programming",
+    author: "Clinton L",
+    status: {
+        own: true,
+        reading: false,
+        read: false
+    }
+   }
+   ,
+   {
+   title: "Linux tutorials",
+   author: "Michael O",
+   status: {
+       own: true,
+       reading: false,
+       read: false
+   }
+   },
+   {
+    title: "Multithreading",
+    author: "Andy S",
+    status: {
+        own: true,
+        reading: false,
+        read: false
+    }
+    }
+];
 
-// Parse JSON
-const obj = JSON.parse(str);
+for(let i = 0;i < library.length;i++) {
+    library[i].status.read = true;
+}
 
-console.log(obj);
+const { title: firstBook } = library[0];
+
+const str = JSON.stringify(library);
+console.log(str);
