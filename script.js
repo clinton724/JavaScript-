@@ -1,12 +1,12 @@
-/* For Of loop */
+/* Higher order array methods */
+const socials = ['Twitter', 'LinkedIn', 'Facebook', 'Instagram'];
 
-const colorObj = {
-    color1: 'red',
-    color2: 'blue',
-    color3: 'white',
-    color4: 'orange'
-}
+// console.log(socials.__proto__);
 
-for(const key in colorObj) {
-    console.log(key, colorObj[key]);
-}
+// Using normal function
+// socials.forEach(function (item) {
+//   console.log(item);
+// });
+
+// Using an arrow function
+socials.forEach((item) => console.log(item) );
