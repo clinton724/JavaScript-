@@ -1,12 +1,14 @@
-/* Ternary Operator */
-const age = 2;
+/* Loops and high order array methods */
+// FizzBuzz Challenge
 
-// Using an if statement
-if (age >= 18) {
-    console.log('You can vote');
-} else {
-    console.log('You cannot vote');
+for(let i = 1; i <= 100; i++) {
+    if(i % 3 && i % 5 === 0) {
+        console.log('FizzBuzz');
+    } else if(i % 3 === 0) {
+        console.log('Fizz');
+    } else if(i % 5 === 0) {
+        console.log('Buzz');
+    } else {
+        console.log(i);
+    }
 }
-
-// Using a ternary operator
-age >= 18 ? console.log('You can vote') : console.log('You can not vote');
