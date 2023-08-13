@@ -1,13 +1,12 @@
-// ||= assigns the right side value only if the left is a falsey value
+/* Ternary Operator */
+const age = 2;
 
-let a = false;
-
-if(!a) {
-    a = 10;
+// Using an if statement
+if (age >= 18) {
+    console.log('You can vote');
+} else {
+    console.log('You cannot vote');
 }
 
-a = a||10;
-
-// &&= assigns the right side value   only if the left side is a truthy value.
-
-// ??= assigns the right side value only if the left is null or undefined.
+// Using a ternary operator
+age >= 18 ? console.log('You can vote') : console.log('You can not vote');
