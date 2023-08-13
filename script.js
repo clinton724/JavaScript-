@@ -1,12 +1,6 @@
 /* Higher order array methods */
-const socials = ['Twitter', 'LinkedIn', 'Facebook', 'Instagram'];
+const numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
 
-// console.log(socials.__proto__);
-
-// Using normal function
-// socials.forEach(function (item) {
-//   console.log(item);
-// });
-
-// Using an arrow function
-socials.forEach((item) => console.log(item) );
+// Filter out even numbers
+let even = numbers.filter((item) => item % 2 === 0);
+console.log(even); 
