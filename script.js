@@ -1,7 +1,12 @@
 /* For Of loop */
 
-const items = ['books','table','chair','kite','cup'];
+const colorObj = {
+    color1: 'red',
+    color2: 'blue',
+    color3: 'white',
+    color4: 'orange'
+}
 
-for(const item of items) {
-    console.log(item);
+for(const key in colorObj) {
+    console.log(key, colorObj[key]);
 }
