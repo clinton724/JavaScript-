@@ -1,42 +1,13 @@
-/* Function Challenge */
+// ||= assigns the right side value only if the left is a falsey value
 
-// // Challenge 1
-// const getCelsius = (x) => (x - 32) * 5 / 9; 
+let a = false;
 
-// //console.log(`The temperature in Celsius is ${getCelsius(32)} \xB0C`);
+if(!a) {
+    a = 10;
+}
 
-// // Challenge 2
-// const minMax = (rest) =>  {return {min:Math.min(...rest), max:Math.max(...rest)};}
+a = a||10;
 
-// // console.log(minMax([1,2,3,4,5,6,7]));
+// &&= assigns the right side value   only if the left side is a truthy value.
 
-// // Challenge 3
-// (function (length, width) {
-//     const area = length * width;
-//     console.log(`The area of a rectangle with a length of ${length} and a width
-//     of ${width} is ${area}`);
-// })(10, 5);
-
-/* Calculator Challenge */
- function calculator(num1, num2, operator) {
-    let result;
-    switch (operator) {
-        case '+':
-            result = num1 + num2;
-            break;
-        case '-':
-            result = num1 - num2;
-            break;
-        case '*':
-            result = num1 * num2;
-            break;
-        case '/':
-            result = num1 / num2;
-            break;
-        default:
-            result = 'Invalid operation.';
-    }
-    return result;
- }
-
- console.log(calculator(100, 50, ';'));
+// ??= assigns the right side value only if the left is null or undefined.
