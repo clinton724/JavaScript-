@@ -1,61 +1,41 @@
-/* Higher order array Challenges */
-// Challenge 1
-const people = [
-  {
-    firstName: 'John',
-    lastName: 'Doe',
-    email: 'john@gmail.com',
-    phone: '111-111-1111',
-    age: 30,
-  },
-  {
-    firstName: 'Jane',
-    lastName: 'Poe',
-    email: 'jane@gmail.com',
-    phone: '222-222-2222',
-    age: 25,
-  },
-  {
-    firstName: 'Bob',
-    lastName: 'Foe',
-    email: 'bob@gmail.com',
-    phone: '333-333-3333',
-    age: 45,
-  },
-  {
-    firstName: 'Sara',
-    lastName: 'Soe',
-    email: 'Sara@gmail.com',
-    phone: '444-444-4444',
-    age: 19,
-  },
-  {
-    firstName: 'Jose',
-    lastName: 'Koe',
-    email: 'jose@gmail.com',
-    phone: '555-555-5555',
-    age: 23,
-  },
-];
+/* Methods for selecting specific elements */
 
-const younPeople = people.filter((item) => {
-    return item.age <= 25;
-}).map((element) => {
-    return {name: `${element.firstName} ${element.lastName}`, email: element.email};
-})
+// document.getElementById()
+let output;
+output = document.getElementById('app-title');
+output = document.getElementById('app-title').getAttribute('id');
 
-// Challenge 2
-const numbers = [2, -38, 50, 20, -21, -9, 7];
-const sum = numbers.filter((item) => {
-    return item > 0;
-}).reduce((accumulate, currentValue) => {
-    return accumulate + currentValue;
-}, 0);
+// Set attributes
+output = document.getElementById('app-title').setAttribute('class', 'title');
+const title = document.getElementById('app-title');
 
-// Challenge 3
-const words = ['coder', 'programmer', 'developer'];
+// Get/ Change content
+console.log(title.textContent);
+title.textContent = 'Hello World';
+title.innerHTML = '<strong> Shopping List </strong>';
 
-const capitilizedWords = words.map((item) => {
-     return item[0].toUpperCase() + item.slice(1);
-})
-console.log(capitilizedWords);
+// Change Style
+title.style.color = 'red';
+title.style.backgroundColor = 'black';
+title.style.padding = '10px';
+title.style.borderRadius = '10px';
+
+// document.querySelector()
+console.log(document.querySelector('h1')); // we can select using the html tag
+console.log(document.querySelector('#app-title')); // we can select by id
+console.log(document.querySelector('.container')); // we can select by class
+console.log(document.querySelector('input[type="text"]')); // we can select by text
+
+// Use these methods on other elements
+const list = document.querySelector('ul');
+console.log(list);
+const firstItem = list.querySelector('li');
+console.log(firstItem);
+firstItem.style.color = 'blue';
+
+
+
+
+
+
+
