@@ -1,3 +1,4 @@
+
 // const div = document.createElement('div');
 // div.className = 'my-element';
 // div.id = 'my-element';
@@ -21,3 +22,9 @@ li.appendChild(button);
 const icon = document.createElement('i'); // This is an icon
 icon.className = 'fa-solid fa-xmark';
 button.appendChild(icon);
+
+
+const capitilizedWords = words.map((item) => {
+     return item[0].toUpperCase() + item.slice(1);
+})
+console.log(capitilizedWords);
