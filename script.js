@@ -1,4 +1,4 @@
-/* Traversing the DOM */
+/* Traversing the DOM - Elements*/
 // Get child elements from parent
 let output
 
