@@ -1,21 +1,27 @@
-/* document.querySelectorAll() */
-// We can only use array methods to Nodelists but not to htmlcollections
-// We have to use Array.from() to convert from HTMLCollection to array
+/* Traversing the DOM */
+// Get child elements from parent
+let output
 
-/** For most cases, we will use the querySelectorAll method **/
-// const listItems = document.querySelectorAll('.item'); // Here we can use the forEach because it is a Nodelis
-// console.log(listItems);
+const parent = document.querySelector('.parent');
 
-// listItems.forEach((item) => {
-//     item.style.color = 'blue';
-// })
+output = parent.children;
+output = parent.children[1].innerText;
+output = parent.firstElementChild.innerText;
+output = parent.lastElementChild.innerText = 'Child Three';
 
-// const listItems = document.getElementsByClassName('item'); // We cannot use the forEach function, it is an HTMLcollection
-// const listItemsArray = Array.from(listItems);
+// Get parent elements from a child
+const child = document.querySelector('.child');
 
-// listItemsArray.forEach((item) => {
-// console.log(item.innerText);
-// })
+output = child.parentElement;
+child.parentElement.style.border = '1px solid #ccc';
+child.parentElement.style.padding = '10px';
 
-const listItem3 = document.getElementsByTagName('li'); // Also htmlCollection
-console.log(listItem3)
+// Sibling elements
+const secondItem = document.querySelector('.child:nth-child(2)');
+output = secondItem;
+// output = secondItem.nextSibling; // nextSibling will give us the next node, regardless of what it is.
+// We should use the nextElementSibling
+output = secondItem.nextElementSibling;
+output = secondItem.previousElementSibling;
+console.log(output);
+
