@@ -1,61 +1,23 @@
-/* Higher order array Challenges */
-// Challenge 1
-const people = [
-  {
-    firstName: 'John',
-    lastName: 'Doe',
-    email: 'john@gmail.com',
-    phone: '111-111-1111',
-    age: 30,
-  },
-  {
-    firstName: 'Jane',
-    lastName: 'Poe',
-    email: 'jane@gmail.com',
-    phone: '222-222-2222',
-    age: 25,
-  },
-  {
-    firstName: 'Bob',
-    lastName: 'Foe',
-    email: 'bob@gmail.com',
-    phone: '333-333-3333',
-    age: 45,
-  },
-  {
-    firstName: 'Sara',
-    lastName: 'Soe',
-    email: 'Sara@gmail.com',
-    phone: '444-444-4444',
-    age: 19,
-  },
-  {
-    firstName: 'Jose',
-    lastName: 'Koe',
-    email: 'jose@gmail.com',
-    phone: '555-555-5555',
-    age: 23,
-  },
-];
+// const div = document.createElement('div');
+// div.className = 'my-element';
+// div.id = 'my-element';
+// div.setAttribute('title', 'my-title');
 
-const younPeople = people.filter((item) => {
-    return item.age <= 25;
-}).map((element) => {
-    return {name: `${element.firstName} ${element.lastName}`, email: element.email};
-})
+// const text = document.createTextNode('Hello World');
+// div.appendChild(text);
+// // document.body.appendChild(div);
+// document.querySelector('ul').appendChild(div);
+// console.log(div);
 
-// Challenge 2
-const numbers = [2, -38, 50, 20, -21, -9, 7];
-const sum = numbers.filter((item) => {
-    return item > 0;
-}).reduce((accumulate, currentValue) => {
-    return accumulate + currentValue;
-}, 0);
-
-// Challenge 3
-const words = ['coder', 'programmer', 'developer'];
-
-const capitilizedWords = words.map((item) => {
-     return item[0].toUpperCase() + item.slice(1);
-})
-console.log(capitilizedWords);
+// Challenge creating elements and appending them
+const li = document.createElement('li'); // create the actual element
+li.className = 'item'; // Assign it a class (optional)
+const text = document.createTextNode('Tomatoes'); // set the text of the tag
+li.appendChild(text); // append the text
+document.body.querySelector('ul').appendChild(li); // finally, append the child
+const button = document.createElement('button');
+button.className = 'remove-item btn-link text-red';
+li.appendChild(button);
+const icon = document.createElement('i'); // This is an icon
+icon.className = 'fa-solid fa-xmark';
+button.appendChild(icon);
