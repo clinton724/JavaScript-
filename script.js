@@ -1,27 +1,26 @@
-/* Traversing the DOM - Elements*/
-// Get child elements from parent
-let output
+/* Traversing the DOM - Nodes*/
+// Getting child nodes from the parent
+let ouput
 
 const parent = document.querySelector('.parent');
+output = parent.childNodes; // white space counts as text in html
+output = parent.childNodes[0];
+parent.childNodes[3].style.color = 'red';
+parent.childNodes[3].innerText = 'Child One';
 
-output = parent.children;
-output = parent.children[1].innerText;
-output = parent.firstElementChild.innerText;
-output = parent.lastElementChild.innerText = 'Child Three';
+output = parent.firstChild;
+parent.lastChild.textContent = 'Hello';
 
-// Get parent elements from a child
+// Getting parent nodes from the children
 const child = document.querySelector('.child');
+output = child;
+output = child.parentNode;
+// parentNode and parentElement are the same
+child.parentNode.style.backgroundColor = '#ccc';
+child.parentNode.style.padding = '10px';
 
-output = child.parentElement;
-child.parentElement.style.border = '1px solid #ccc';
-child.parentElement.style.padding = '10px';
-
-// Sibling elements
+// Getting siblings
 const secondItem = document.querySelector('.child:nth-child(2)');
-output = secondItem;
-// output = secondItem.nextSibling; // nextSibling will give us the next node, regardless of what it is.
-// We should use the nextElementSibling
-output = secondItem.nextElementSibling;
-output = secondItem.previousElementSibling;
+output = secondItem.nextSibling; // Note the difference between nextElementSibling and nextSibling
 console.log(output);
 
