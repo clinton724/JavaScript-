@@ -1,34 +1,33 @@
-const clearBtn = document.querySelector('#clear');
-function onClear () {
-  // const li = document.querySelectorAll('li');
-  // li.forEach((item) => {
-  //   item.remove();
-  // })
-  const ul = document.querySelector('ul');
-  // const li = document.querySelectorAll('li');
+const logo = document.querySelector('img');
 
-  // li.forEach((item) => {
-  //   ul.removeChild(item);
-  // })
-
-  /* Most performing */
-  while (ul.firstChild) {
-      ul.removeChild(ul.firstChild);
+const onClick = () => console.log('click event');
+const onDoubleClick = () => {
+  if(document.body.style.backgroundColor != 'purple') {
+    document.body.style.backgroundColor = 'purple';
+    document.body.style.color = 'white';
+  } else {
+    document.body.style.backgroundColor = 'white';
+    document.body.style.color = 'black';
   }
-}
-// JavaScript Event Listener
-// clearBtn.onclick = function () {
-//   alert('clear items');
-// }
+};
 
-// addEventListener()
-// clearBtn.addEventListener('click', function () {
-//   alert('clear Items');
-// });
-// clearBtn.addEventListener('click', function () {
-//   console.log('clear items');
-// });
-clearBtn.addEventListener('click', onClear);
-// setTimeout(() => clearBtn.removeEventListener('click', onClear), 5000);
+const onRightClick = () => console.log('Right click event');
+const onMouseDown = () => console.log('Mouse down event');
+const onMouseWheel = () => console.log('Mouse wheel event');
+const onMouseOver = () => console.log('Mouse over event');
+const onDragStart = () => console.log('Drag start event');
+const onDrag = () => console.log('Drag event');
 
-// setTimeout(() => clearBtn.click(), 5000);
+
+
+// Event Listeners
+logo.addEventListener('dblclick', onDoubleClick);
+logo.addEventListener('contextmenu', onRightClick);
+logo.addEventListener('mousedown', onMouseDown);
+logo.addEventListener('wheel', onMouseWheel);
+logo.addEventListener('mouseover', onMouseOver);
+logo.addEventListener('dragstart', onDragStart);
+logo.addEventListener('drag', onDrag);
+
+
+
