@@ -1,37 +1,26 @@
-function removeClearButton () {
-  const clearBtn = document.querySelector('#clear').remove();
-  clearBtn.remove();
+const text = document.querySelector('p');
+const itemList = document.querySelector('.item-list');
+const items = itemList.querySelectorAll('li');
+
+function run() {
+  // classname
+  // console.log(itemList.className);
+  // text.className = 'card dark';
+
+  // //classList
+  // console.log(itemList.classList);
+
+  itemList.classList.forEach(c => console.log(c));
+  // text.classList.add('dark');
+  // text.classList.remove('card');
+
+  // text.classList.toggle('dark');
+  // text.classList.replace('card','dark');
+
+  // itemList.style.lineHeight = '3';
+
+  items.forEach((item, index) => {
+    item.style.color = 'red';
+  })
 }
-
-function removeFirstItem () {
-  const ul = document.querySelector('ul');
-  const li = document.querySelector('li:nth-child(1)');
-
-  ul.removeChild(li);
-}
-
-function removeItem (itemNumber) {
-  const ul = document.querySelector('ul');
-  const li = document.querySelector(`li:nth-child(${itemNumber})`);
-
-  ul.removeChild(li);
-}
-
-function removeItem2 (itemNumber) {
-  const ul = document.querySelector('ul');
-  const li = document.querySelectorAll('li');
-
-  li.forEach((item, index) => {
-    index == itemNumber ? ul.removeChild(item) : null;
-  });
-}
-
-function removeItem3 (itemNumber) {
-  const li = document.querySelectorAll('li');
-  li[itemNumber - 1].remove();
-}
-//removeClearButton();
-// removeFirstItem();
-// removeItem(4);
-// removeItem2(3);
-removeItem3(4);
+document.querySelector('button').onclick = run;
