@@ -1,30 +1,43 @@
+// insertAdjacentElement Example
+function insertElement () {
+  const filter = document.querySelector('.filter');
 
-// const div = document.createElement('div');
-// div.className = 'my-element';
-// div.id = 'my-element';
-// div.setAttribute('title', 'my-title');
+  const h1 = document.createElement('h1');
+  h1.textContent = 'insertAdjacentElement';
+  filter.insertAdjacentElement('afterbegin', h1);
+}
+// insertAdjacentText Example
+function insertText () {
+  item = document.querySelector('li');
+  item.insertAdjacentText('afterend', 'insertAdjacentText');
+}
 
-// const text = document.createTextNode('Hello World');
-// div.appendChild(text);
-// // document.body.appendChild(div);
-// document.querySelector('ul').appendChild(div);
-// console.log(div);
+// insertAdjacentHTML Example
+// note that the . represents a class and the # represents an id for the queryselector
+function insertHTML () {
+  const clearBtn = document.querySelector('#clear');
+  clearBtn.insertAdjacentHTML('beforeend','<h2>insertAdjacentHTML</h2>');
+}
+// insertBefore Example
+function insertBeforeItem () {
+   const ul = document.querySelector('ul');
+   const li = document.createElement('li');
+   li.textContent = 'insertBefore';
 
-// Challenge creating elements and appending them
-const li = document.createElement('li'); // create the actual element
-li.className = 'item'; // Assign it a class (optional)
-const text = document.createTextNode('Tomatoes'); // set the text of the tag
-li.appendChild(text); // append the text
-document.body.querySelector('ul').appendChild(li); // finally, append the child
-const button = document.createElement('button');
-button.className = 'remove-item btn-link text-red';
-li.appendChild(button);
-const icon = document.createElement('i'); // This is an icon
-icon.className = 'fa-solid fa-xmark';
-button.appendChild(icon);
+   const thirdItem = document.querySelector('li:nth-child(3)');
+   ul.insertBefore(li, thirdItem);
+}
 
-
-const capitilizedWords = words.map((item) => {
-     return item[0].toUpperCase() + item.slice(1);
-})
-console.log(capitilizedWords);
+insertElement();
+//insertText();
+insertHTML();
+insertBeforeItem();
+/*
+<!-- beforebegin -->
+<p>
+  <!-- afterbegin -->
+   foo
+  <!-- beforeend-->
+</p>
+<!-- afterend -->
+*/
