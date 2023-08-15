@@ -28,10 +28,18 @@ function insertBeforeItem () {
    ul.insertBefore(li, thirdItem);
 }
 
+function insertAfterItem(newEl, existingEl) {
+  newEl.textContent = 'Insert Me After!';
+  existingEl.insertAdjacentElement('afterend', newEl);
+}
+
 insertElement();
 //insertText();
 insertHTML();
 insertBeforeItem();
+const firstItem = document.querySelector('li:nth-child(1)');
+const li = document.createElement('li');
+insertAfterItem(li, firstItem);
 /*
 <!-- beforebegin -->
 <p>
