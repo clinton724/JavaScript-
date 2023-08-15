@@ -1,51 +1,37 @@
-// insertAdjacentElement Example
-function insertElement () {
-  const filter = document.querySelector('.filter');
+function replaceFirstItem () {
+  const firstItem = document.querySelector('li:nth-child(1)');
 
-  const h1 = document.createElement('h1');
-  h1.textContent = 'insertAdjacentElement';
-  filter.insertAdjacentElement('afterbegin', h1);
-}
-// insertAdjacentText Example
-function insertText () {
-  item = document.querySelector('li');
-  item.insertAdjacentText('afterend', 'insertAdjacentText');
+  const li = document.querySelector('li');
+  li.textContent = 'Replaced First';
+
+  firstItem.replaceWith(li);
 }
 
-// insertAdjacentHTML Example
-// note that the . represents a class and the # represents an id for the queryselector
-function insertHTML () {
-  const clearBtn = document.querySelector('#clear');
-  clearBtn.insertAdjacentHTML('beforeend','<h2>insertAdjacentHTML</h2>');
-}
-// insertBefore Example
-function insertBeforeItem () {
-   const ul = document.querySelector('ul');
-   const li = document.createElement('li');
-   li.textContent = 'insertBefore';
-
-   const thirdItem = document.querySelector('li:nth-child(3)');
-   ul.insertBefore(li, thirdItem);
+function replaceSecondItem () {
+  const secondItem = document.querySelector('li:nth-child(2)');
+  secondItem.outerHTML = '<li> Replaced Second </li>';
 }
 
-function insertAfterItem(newEl, existingEl) {
-  newEl.textContent = 'Insert Me After!';
-  existingEl.insertAdjacentElement('afterend', newEl);
+function replaceAllItems () {
+  const allItems = document.querySelectorAll('li');
+  // Since this returns a nodelist, we can use array methods
+  // If it had returned an HTMLcollection, we would have to use
+  // Array.from()
+  let counter = 1;
+  allItems.forEach((item, index) => index === 1 ? item.innerHTML = '2nd One': item.innerHTML = `Replaced ${index}`);
 }
 
-insertElement();
-//insertText();
-insertHTML();
-insertBeforeItem();
-const firstItem = document.querySelector('li:nth-child(1)');
-const li = document.createElement('li');
-insertAfterItem(li, firstItem);
-/*
-<!-- beforebegin -->
-<p>
-  <!-- afterbegin -->
-   foo
-  <!-- beforeend-->
-</p>
-<!-- afterend -->
-*/
+function replaceChildHeading () {
+  const header = document.querySelector('header');
+  const h1 = document.querySelector('header h1');
+  
+  const h2 = document.createElement('h2');
+  h2.id = 'app-title';
+  h2.textContent = 'Shopping List2';
+  header.replaceChild(h2, h1);
+}
+
+replaceFirstItem();
+replaceSecondItem();
+replaceAllItems();
+replaceChildHeading();
