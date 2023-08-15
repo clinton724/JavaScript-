@@ -1,37 +1,37 @@
-function replaceFirstItem () {
-  const firstItem = document.querySelector('li:nth-child(1)');
-
-  const li = document.querySelector('li');
-  li.textContent = 'Replaced First';
-
-  firstItem.replaceWith(li);
+function removeClearButton () {
+  const clearBtn = document.querySelector('#clear').remove();
+  clearBtn.remove();
 }
 
-function replaceSecondItem () {
-  const secondItem = document.querySelector('li:nth-child(2)');
-  secondItem.outerHTML = '<li> Replaced Second </li>';
+function removeFirstItem () {
+  const ul = document.querySelector('ul');
+  const li = document.querySelector('li:nth-child(1)');
+
+  ul.removeChild(li);
 }
 
-function replaceAllItems () {
-  const allItems = document.querySelectorAll('li');
-  // Since this returns a nodelist, we can use array methods
-  // If it had returned an HTMLcollection, we would have to use
-  // Array.from()
-  let counter = 1;
-  allItems.forEach((item, index) => index === 1 ? item.innerHTML = '2nd One': item.innerHTML = `Replaced ${index}`);
+function removeItem (itemNumber) {
+  const ul = document.querySelector('ul');
+  const li = document.querySelector(`li:nth-child(${itemNumber})`);
+
+  ul.removeChild(li);
 }
 
-function replaceChildHeading () {
-  const header = document.querySelector('header');
-  const h1 = document.querySelector('header h1');
-  
-  const h2 = document.createElement('h2');
-  h2.id = 'app-title';
-  h2.textContent = 'Shopping List2';
-  header.replaceChild(h2, h1);
+function removeItem2 (itemNumber) {
+  const ul = document.querySelector('ul');
+  const li = document.querySelectorAll('li');
+
+  li.forEach((item, index) => {
+    index == itemNumber ? ul.removeChild(item) : null;
+  });
 }
 
-replaceFirstItem();
-replaceSecondItem();
-replaceAllItems();
-replaceChildHeading();
+function removeItem3 (itemNumber) {
+  const li = document.querySelectorAll('li');
+  li[itemNumber - 1].remove();
+}
+//removeClearButton();
+// removeFirstItem();
+// removeItem(4);
+// removeItem2(3);
+removeItem3(4);
