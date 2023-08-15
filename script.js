@@ -1,26 +1,34 @@
-const text = document.querySelector('p');
-const itemList = document.querySelector('.item-list');
-const items = itemList.querySelectorAll('li');
+const clearBtn = document.querySelector('#clear');
+function onClear () {
+  // const li = document.querySelectorAll('li');
+  // li.forEach((item) => {
+  //   item.remove();
+  // })
+  const ul = document.querySelector('ul');
+  // const li = document.querySelectorAll('li');
 
-function run() {
-  // classname
-  // console.log(itemList.className);
-  // text.className = 'card dark';
+  // li.forEach((item) => {
+  //   ul.removeChild(item);
+  // })
 
-  // //classList
-  // console.log(itemList.classList);
-
-  itemList.classList.forEach(c => console.log(c));
-  // text.classList.add('dark');
-  // text.classList.remove('card');
-
-  // text.classList.toggle('dark');
-  // text.classList.replace('card','dark');
-
-  // itemList.style.lineHeight = '3';
-
-  items.forEach((item, index) => {
-    item.style.color = 'red';
-  })
+  /* Most performing */
+  while (ul.firstChild) {
+      ul.removeChild(ul.firstChild);
+  }
 }
-document.querySelector('button').onclick = run;
+// JavaScript Event Listener
+// clearBtn.onclick = function () {
+//   alert('clear items');
+// }
+
+// addEventListener()
+// clearBtn.addEventListener('click', function () {
+//   alert('clear Items');
+// });
+// clearBtn.addEventListener('click', function () {
+//   console.log('clear items');
+// });
+clearBtn.addEventListener('click', onClear);
+// setTimeout(() => clearBtn.removeEventListener('click', onClear), 5000);
+
+// setTimeout(() => clearBtn.click(), 5000);
