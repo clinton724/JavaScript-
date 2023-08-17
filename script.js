@@ -34,4 +34,5 @@ const onKeyDown = (e) => {
 // itemInput.addEventListener('keypress', onKeyPress); 
 // itemInput.addEventListener('keyup', onKeyUp); 
  itemInput.addEventListener('keydown', onKeyDown); 
+ // https://www.toptal.com/developers/keycode
 
