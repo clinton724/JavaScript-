@@ -1,36 +1,24 @@
-const itemInput = document.getElementById('item-input');
-const priorityInput = document.getElementById('priority-input');
-const checkbox = document.getElementById('checkbox');
-const heading = document.querySelector('h1');
+const form = document.getElementById('item-form');
 
-function onInput (e) {
-  console.log(e.target.value);
+function onSubmit (e) {
+  e.preventDefault();
+  
+  const item = document.querySelector('#item-input').value;
+  const priority = document.querySelector('#priority-input').value;
+  
+  if(item === '' || priority === '0') {
+    alert('Please fill all the fields');
+    return;
+  }
+  console.log(item, priority);
 }
 
-function onCheckbox (e) {
-  const isChecked = e.target.checked;
-  heading.textContent = isChecked ? 'Checked' : 'Not Checked';
+function onSubmit2(e) {
+  e.preventDefault();
+  const formData = new FormData(form);
+  // What we pass in the parenthesis is the name attribute of the element
+  const item = formData.get('item');
+  const priority = formData.get('priority');
+  console.log(item, priority);
 }
-
-function onFocus (e) {
-  console.log('Input is focus');
-  itemInput.style.outlineStyle = 'solid';
-  itemInput.style.outlineWidth = '1px';
-  itemInput.style.outlineColor = 'red';
-}
-
-function onBlur (e) {
-  console.log('Input is blur');
-  itemInput.style.outlineStyle = 'none';
-}
-itemInput.addEventListener('input', onInput);
-priorityInput.addEventListener('change', onInput);
-checkbox.addEventListener('input', onCheckbox);
-
-itemInput.addEventListener('focus', onFocus);
-itemInput.addEventListener('blur', onBlur);
-
-
-
-
-
+form.addEventListener('submit', onSubmit2);
