@@ -1,24 +1,20 @@
-const form = document.getElementById('item-form');
+const button = document.querySelector('form button');
+const div = document.querySelector('form div:nth-child(2)');
+const form = document.querySelector('form');
 
-function onSubmit (e) {
-  e.preventDefault();
-  
-  const item = document.querySelector('#item-input').value;
-  const priority = document.querySelector('#priority-input').value;
-  
-  if(item === '' || priority === '0') {
-    alert('Please fill all the fields');
-    return;
-  }
-  console.log(item, priority);
-}
+button.addEventListener('click', (e) => {
+  alert('The button was clicked');
+  e.stopPropagation();
+});
 
-function onSubmit2(e) {
-  e.preventDefault();
-  const formData = new FormData(form);
-  // What we pass in the parenthesis is the name attribute of the element
-  const item = formData.get('item');
-  const priority = formData.get('priority');
-  console.log(item, priority);
-}
-form.addEventListener('submit', onSubmit2);
+div.addEventListener('click', () => {
+  alert('Div was clicked');
+})
+
+form.addEventListener('click', () => {
+  alert('Form was clicked');
+})
+
+document.body.addEventListener('click', () => {
+  alert('Document was clicked');
+})
